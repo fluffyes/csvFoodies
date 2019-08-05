@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="drP-vr-5sm">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="um9-CK-80T">
+            <objects>
+                <navigationController id="drP-vr-5sm" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cnk-OW-sdI">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vyA-Zn-eDy" kind="relationship" relationship="rootViewController" id="BrN-4w-dA4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rZ0-Cx-kuG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-314" y="68"/>
+        </scene>
+        <!--Restaurant View Controller-->
+        <scene sceneID="Qpt-6E-bEF">
+            <objects>
+                <viewController id="vyA-Zn-eDy" customClass="RestaurantViewController" customModule="csvFoodies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dwm-ir-fLU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JHH-RA-Hzt">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JHH-RA-Hzt" firstAttribute="bottom" secondItem="bMD-7T-HaR" secondAttribute="bottom" id="Dgg-FZ-PW3"/>
+                            <constraint firstItem="JHH-RA-Hzt" firstAttribute="leading" secondItem="bMD-7T-HaR" secondAttribute="leading" id="NQL-e0-OSN"/>
+                            <constraint firstItem="JHH-RA-Hzt" firstAttribute="trailing" secondItem="bMD-7T-HaR" secondAttribute="trailing" id="lmA-Cq-dO3"/>
+                            <constraint firstItem="JHH-RA-Hzt" firstAttribute="top" secondItem="bMD-7T-HaR" secondAttribute="top" id="nrn-rs-spW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bMD-7T-HaR"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="awJ-95-7hM"/>
+                    <connections>
+                        <outlet property="restaurantsTableView" destination="JHH-RA-Hzt" id="oxV-7Q-bKN"/>
+                        <segue destination="dTh-k6-ca2" kind="show" identifier="RestaurantToFoodSegue" id="H0D-hu-cp2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lnc-aP-6WL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="476" y="68"/>
+        </scene>
+        <!--Food View Controller-->
+        <scene sceneID="dN9-Mn-MJX">
+            <objects>
+                <viewController id="dTh-k6-ca2" customClass="FoodViewController" customModule="csvFoodies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="snE-uO-njS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YeP-Zx-Hg3">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YeP-Zx-Hg3" firstAttribute="bottom" secondItem="yeP-Nf-b11" secondAttribute="bottom" id="NwU-A1-Vp3"/>
+                            <constraint firstItem="YeP-Zx-Hg3" firstAttribute="trailing" secondItem="yeP-Nf-b11" secondAttribute="trailing" id="PSC-t9-J31"/>
+                            <constraint firstItem="YeP-Zx-Hg3" firstAttribute="top" secondItem="yeP-Nf-b11" secondAttribute="top" id="Ysc-FA-wiw"/>
+                            <constraint firstItem="YeP-Zx-Hg3" firstAttribute="leading" secondItem="yeP-Nf-b11" secondAttribute="leading" id="toR-4q-b1s"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yeP-Nf-b11"/>
+                    </view>
+                    <connections>
+                        <outlet property="foodTableView" destination="YeP-Zx-Hg3" id="3ue-8a-gDj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xOg-Tz-6xw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1205.5999999999999" y="67.916041979010501"/>
+        </scene>
+    </scenes>
+</document>
