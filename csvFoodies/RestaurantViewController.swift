@@ -13,8 +13,7 @@ class RestaurantViewController: UIViewController {
 
     @IBOutlet weak var restaurantsTableView: UITableView!
     
-    // default realm object
-    let realm = try! Realm(fileURL: Bundle.main.url(forResource: "foodies", withExtension: "realm")!)
+    var realm : Realm!
     
     let cellIdentifier = "restaurantCell"
     
@@ -23,6 +22,15 @@ class RestaurantViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Read the foodies.realm file
+        let realmPath = Bundle.main.url(forResource: "foodies",
+                                        withExtension: "realm")!
+        
+        // configure to read only as file located in Bundle is not writeable
+        let realmConfiguration = Realm.Configuration(fileURL:
+            realmPath, readOnly: true)
+        realm = try! Realm(configuration: realmConfiguration)
         
         self.title = "Restaurants"
         
